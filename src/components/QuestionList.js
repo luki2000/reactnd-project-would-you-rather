@@ -8,7 +8,6 @@ import { checkIfUserAnsweredById } from '../utils/helper';
 
 class QuestionList extends Component {
     render() {
-        console.log(this.props);
         const { questionIds, questions, authUser } = this.props
 
         //this function filter through all votes and returns the question ids that the auth user responded
@@ -20,11 +19,19 @@ class QuestionList extends Component {
             <div>
                 <h3>Unanswered</h3>
                 <ul>
-                    {unanswered.map(qid => <li key={qid}><PollTemplates id={qid} questions={this.props.questions} users={this.props.users} type="viewpoll"/></li>)}
+                    {unanswered.map(qid => (
+                        <li key={qid}>
+                            <PollTemplates id={qid} {...this.props} type="viewPoll"/>
+                        </li>
+                    ))}
                 </ul>
                <h3>answered</h3>
                 <ul>
-                    {answered.map(qid => <li key={qid}><PollTemplates id={qid} questions={this.props.questions} users={this.props.users} type="viewpoll"/></li>)}
+                    {answered.map(qid => (
+                        <li key={qid}>
+                            <PollTemplates id={qid} {...this.props} type="viewPoll"/>
+                        </li>
+                    ))}
                 </ul>
             </div>
         );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { checkIfUserAnsweredById } from '../utils/helper';
+import PollTemplates from './widgets/PollTemplates'
 import {Link} from 'react-router-dom'; 
 
 
@@ -69,17 +70,7 @@ class ChooseQuestionForm extends React.Component {
                 </div>
                 
                 :
-
-                <form onSubmit={this.handleAnswerSubmit}>
-                    <h3>Would you rather..</h3>
-                    <p>avatar is {users[question.author].avatarURL } and author is 
-                        {users[question.author].name}</p>
-                        
-                    <input type="radio" value={Object.keys(question)[3]}  onChange={this.handleChange}  checked={this.state.selectedOption === 'optionOne'}/> {vote1.text}<br/>
-                                -- OR -- <br/>
-                    <input type="radio" value={Object.keys(question)[4]}  onChange={this.handleChange}  checked={this.state.selectedOption === 'optionTwo'}/> {vote2.text}<br/>
-                    <button type="submit">Submit</button>
-                </form> }
+                    <PollTemplates  {...this.props} selectedOption={this.state.selectedOption} handleAnswerSubmit={this.handleAnswerSubmit} handleChange={this.handleChange} vote1={vote1} vote2={vote2} type="selectPollAnswer"/>}
             </div>
         );
     }
