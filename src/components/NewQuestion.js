@@ -16,8 +16,7 @@ class NewQuestion extends React.Component {
             optionOneText: this.state.optionOne,
             optionTwoText: this.state.optionTwo,
         }
-        this.props.SaveTheQuestion(obj);
-        this.props.history.push('/');
+        this.props.SaveTheNewQuestion(obj,this.props.history);
     }
     render() {
         console.log(this.props);

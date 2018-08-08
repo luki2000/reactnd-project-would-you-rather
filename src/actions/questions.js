@@ -76,7 +76,7 @@ function saveQuestionToQuestions(question) {
     }
 }
 
-export function SaveTheQuestion(questionDetails) {
+export function SaveTheNewQuestion(questionDetails,cb) {
     return (dispatch,getState) => {
         const { authUser } = getState();
         questionDetails.author = authUser;
@@ -84,6 +84,8 @@ export function SaveTheQuestion(questionDetails) {
                 .then( data => {
                     dispatch(saveQuestionToUsers(data,authUser));
                     dispatch(saveQuestionToQuestions(data));
-                })
+                    //this call back pushes users to home only after question is updated      
+                    cb.push('/');    
+                })     
     }
 }

@@ -15,7 +15,6 @@ export function users(state= {}, action) {
                 ...action.users
             }
         case SAVE_QUESTION_TO_USERS: 
-            /*the payloads question, authUser*/
             return {
                 ...state,
                 [action.authUser]: {

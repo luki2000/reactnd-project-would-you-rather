@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Route, BrowserRouter as Router, Link, Redirect, withRouter, Switch } from 'react-router-dom'; 
 import { connect } from 'react-redux';
 import { signOffAuthUser } from './actions/authentication';
-import { handleInitialQuestionData, SaveTheQuestion } from './actions/questions';
+import { handleInitialQuestionData, SaveTheNewQuestion } from './actions/questions';
 
 
 
@@ -65,7 +65,7 @@ class App extends Component {
                     <Switch>
                         <Route path='/Login' component={Login} />
                         <PrivateRoute authenticator={this.props.isAuthenticated} exact path='/' component={Home}/>
-                        <PrivateRoute authenticator={this.props.isAuthenticated} path='/newquestion' SaveTheQuestion={this.props.SaveTheQuestion} component={NewQuestion} />
+                        <PrivateRoute authenticator={this.props.isAuthenticated} path='/newquestion' SaveTheNewQuestion={this.props.SaveTheNewQuestion} component={NewQuestion} />
                         <PrivateRoute authenticator={this.props.isAuthenticated} users={this.props.users} path='/leaderboard' component={Leaderboard}/>
                         <PrivateRoute authenticator={this.props.isAuthenticated} path='/question/:id' component={QuestionPage}/>
                         <Route component={NoMatch} />
@@ -84,4 +84,4 @@ const mapStateToProps = ({ isAuthenticated, users, authUser }) => {
     }
 }
 
-export default connect(mapStateToProps, { signOffAuthUser, handleInitialQuestionData, SaveTheQuestion })(App);
+export default connect(mapStateToProps, { signOffAuthUser, handleInitialQuestionData, SaveTheNewQuestion })(App);
