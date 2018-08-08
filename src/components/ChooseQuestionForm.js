@@ -1,0 +1,88 @@
+import React, { Component } from 'react';
+import { checkIfUserAnsweredById } from '../utils/helper';
+import {Link} from 'react-router-dom'; 
+
+
+const Error = () => (
+    <div>
+        <h2>404 Not Found</h2>
+    <p>Sorry but the question you were looking for doesn't exist.
+        You can view questions at the <Link to="/">homepage.</Link></p>
+    </div>
+);
+
+
+class ChooseQuestionForm extends React.Component {
+    constructor(props){
+        super(props);
+            this.state = {
+                selectedOption:'optionOne'
+            }
+    }
+
+    handleAnswerSubmit = (e) => {
+        e.preventDefault();
+        const { id } = this.props;
+        const obj = {
+            answer: this.state.selectedOption,
+            qid:id
+        }
+        this.props.handleAnswer(obj.answer,obj.qid);
+    }
+
+    handleChange = (e) => {
+        this.setState({selectedOption: e.target.value});
+    }
+    
+    render() {
+        console.log(this.props);
+        const {id, questions, users, authuser} = this.props;
+        //Here we pass in the id we mapped over and passed as props. 
+        //If the an existingid was manually passed in the URL it still works bc we are setting it as property
+        //to our questions. If the id is none existing its undefined and we give a default value of false
+        const question = questions[id] || false;
+        //verify if the question id even exist. if not send user to error page compoenent.
+        if(question === false) {
+            return <Error/>;
+        }
+
+        const vote1 = {
+            text: question.optionOne.text,
+            length: question.optionOne.votes.length
+        }
+        const vote2 = {
+            text: question.optionTwo.text,
+            length: question.optionTwo.votes.length
+        }
+        const answered = checkIfUserAnsweredById(question.id,questions,authuser);
+        return (
+            <div>
+                { answered.length > 0 
+                ? 
+                <div>
+                    <p>avatar is {users[question.author].avatarURL } and author is 
+                        {users[question.author].name}</p>
+                    <p>result is...</p>
+                    <p>number of votes for '{vote1.text}' is {vote1.length}</p>
+                    <p>number of votes for '{vote2.text}' is {vote2.length}</p>
+                    <p>You voted {users[authuser].answers[id]}</p>
+                </div>
+                
+                :
+
+                <form onSubmit={this.handleAnswerSubmit}>
+                    <h3>Would you rather..</h3>
+                    <p>avatar is {users[question.author].avatarURL } and author is 
+                        {users[question.author].name}</p>
+                        
+                    <input type="radio" value={Object.keys(question)[3]}  onChange={this.handleChange}  checked={this.state.selectedOption === 'optionOne'}/> {vote1.text}<br/>
+                                -- OR -- <br/>
+                    <input type="radio" value={Object.keys(question)[4]}  onChange={this.handleChange}  checked={this.state.selectedOption === 'optionTwo'}/> {vote2.text}<br/>
+                    <button type="submit">Submit</button>
+                </form> }
+            </div>
+        );
+    }
+}
+
+export default ChooseQuestionForm;
