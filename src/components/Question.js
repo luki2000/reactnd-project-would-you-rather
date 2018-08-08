@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+/*import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 class Question extends Component {
     render() {
         //TODO RENDER TWO LIST OF QUESTIONS based on whether the auth user answered the question or not.
-        const { question,/* authUser,*/ users } = this.props;
+        const { question, users } = this.props;
         
         return (
             <Link to={`/question/${question.id}`}>
@@ -16,14 +16,14 @@ class Question extends Component {
     }
 }
 
-function mapStateToProps({/*authUser,*/ users,questions}, { id }) {
+function mapStateToProps({users,questions}, { id }) {
     const question = questions[id]; 
 
     return {
-       /* authUser,*/
         question,
         users
     }
 }
 
 export default connect(mapStateToProps)(Question);
+*/

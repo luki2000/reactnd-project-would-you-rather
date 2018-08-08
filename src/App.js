@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { signOffAuthUser } from './actions/authentication';
 import { handleInitialQuestionData, SaveTheNewQuestion } from './actions/questions';
 
+import './style.css'
 
 
 //PAGE COMPONENTS

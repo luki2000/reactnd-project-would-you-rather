@@ -1,0 +1,166 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    position: relative;
+    z-index: 10;
+    padding: 1rem 1vw;
+    max-width: 14rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    text-align: center;
+    margin: 10px;
+    border-radius: 2px;
+}
+
+.card-1 {
+    position: relative;
+    z-index: 10;
+    padding: 1.5rem 2.5vw;
+    max-width: 21rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    margin: 10px;
+    text-align: center;
+}
+
+.card-2 {
+    position: relative;
+    z-index: 10;
+    padding: 1.5rem 2.5vw;
+    max-width: 41rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    margin: 10px;
+    text-align: center;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.avatar-img { 
+    border-radius: 50%;
+    width: 100px;
+    margin: 0 10px;
+}
+ 
+ .action-button {
+    background: white;
+    border: 1px solid #2196F3;
+    color:#2196F3;
+    border-radius: 5px;
+    padding: 12px 24px;
+    font-weight:bold;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    display: inline-block;
+ }
+
+ .action-button:hover {
+    background: #2196F3; 
+    color: white;
+    cursor:pointer;
+ }
+
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: left;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+.vote-container {
+    max-width: 300px; border: 1px solid #2196F3; margin: 20px; padding: 10px
+}
+.vote-bar__background{
+	background:#e2e0e0; height: 25px; border-radius: 5px; position: relative; margin: 10px; width: 90%; color: white;
+}
+.vote-bar__fill{
+	background:#2196F3; height: 25px; width:50%; border-radius: 5px;}
+.vote-bar__percent__number{
+	position: absolute; padding: 5px; top: 0; width:100%;
+}
+
+.would-rather-title {
+    font-weight:bold; 
+    font-size:20px;
+}
+
+.author {
+    font-weight:bold;
+    color:#2196F3;
+    margin: 0; 
+    margin-bottom: 10px;
+}

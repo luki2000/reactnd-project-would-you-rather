@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Question from './Question';
-import { checkIfUserAnsweredById } from '../utils/helper'
+import PollTemplates from './widgets/PollTemplates';
+import { checkIfUserAnsweredById } from '../utils/helper';
 
 
 
@@ -19,11 +20,11 @@ class QuestionList extends Component {
             <div>
                 <h3>Unanswered</h3>
                 <ul>
-                    {unanswered.map(q => <li key={q}><Question id={q}/></li>)}
+                    {unanswered.map(qid => <li key={qid}><PollTemplates id={qid} questions={this.props.questions} users={this.props.users} type="viewpoll"/></li>)}
                 </ul>
-                <h3>answered</h3>
+               <h3>answered</h3>
                 <ul>
-                    {answered.map(q => <li key={q}><Question id={q}/></li>)}
+                    {answered.map(qid => <li key={qid}><PollTemplates id={qid} questions={this.props.questions} users={this.props.users} type="viewpoll"/></li>)}
                 </ul>
             </div>
         );
