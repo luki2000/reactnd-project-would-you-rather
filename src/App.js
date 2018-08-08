@@ -32,9 +32,9 @@ const PrivateRoute = ({component: Component, authenticator,  ...rest}) => (
 );
 //Here we need to wrap AuthButton with withRouter to get a history prop because it is not being 
 //rendered by react router, now when signing off we are sent to login
-const AuthButton = withRouter(({ history, signOff, authenticator }) => (
+const AuthButton = withRouter(({ history, signOff, authenticator,users,authUser }) => (
     authenticator === true 
-    ? <p>Welcome <button onClick={()=>{
+    ? <p>Welcome {users[authUser].name} <button onClick={()=>{
         signOff(() =>history.push('/'));
     }}>Sign Out</button> </p>
     : <p>You are not logged in</p> 
@@ -56,7 +56,7 @@ class App extends Component {
         return (
             <Router>
                 <div>
-                    <AuthButton signOff={this.props.signOffAuthUser} authenticator={this.props.isAuthenticated}/>
+                    <AuthButton signOff={this.props.signOffAuthUser} users={this.props.users} authUser={this.props.authUser} authenticator={this.props.isAuthenticated}/>
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/newquestion">New Question</Link></li>
@@ -76,8 +76,9 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = ({ isAuthenticated, users }) => {
+const mapStateToProps = ({ isAuthenticated, users, authUser }) => {
     return {
+      authUser,
       isAuthenticated,
       users,
     }

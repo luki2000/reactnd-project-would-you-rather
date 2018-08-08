@@ -15,10 +15,14 @@ export function users(state= {}, action) {
                 ...action.users
             }
         case SAVE_QUESTION_TO_USERS: 
+            /*the payloads question, authUser*/
             return {
                 ...state,
-                ...action.users
+                [action.authUser]: {
+                    ...state[action.authUser],
+                    questions: state[action.authUser].questions.concat([action.question.id])    
                 }
+            }
         default:
             return state;
     }

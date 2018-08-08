@@ -61,17 +61,18 @@ export const SAVE_QUESTION_TO_USERS = 'SAVE_QUESTION_TO_USERS';
 export const SAVE_QUESTION_TO_QUESTIONS = 'SAVE_QUESTION_TO_QUESTIONS';
 
 //saveQuestionToUsers
-function saveQuestionToUsers(users) {
+function saveQuestionToUsers(question,authUser) {
     return {
         type: SAVE_QUESTION_TO_USERS,
-        users
+        question,
+        authUser
     }
 }
 //saveQuestionToQuestions
-function saveQuestionToQuestions(questions) {
+function saveQuestionToQuestions(question) {
     return {
         type: SAVE_QUESTION_TO_QUESTIONS,
-        questions
+        question
     }
 }
 
@@ -81,8 +82,8 @@ export function SaveTheQuestion(questionDetails) {
         questionDetails.author = authUser;
         return _saveQuestion(questionDetails)
                 .then( data => {
-                    dispatch(saveQuestionToUsers(data.users));
-                    dispatch(saveQuestionToQuestions(data.questions));
+                    dispatch(saveQuestionToUsers(data,authUser));
+                    dispatch(saveQuestionToQuestions(data));
                 })
     }
 }

@@ -15,7 +15,7 @@ export function questions(state= {}, action) {
         case SAVE_QUESTION_TO_QUESTIONS: 
             return {
                 ...state,
-                ...action.questions
+                [action.question.id] : action.question
                 }
         default:
             return state;
