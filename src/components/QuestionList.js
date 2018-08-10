@@ -16,8 +16,10 @@ class QuestionList extends Component {
         //once we figured out the answered questions we filter that against the question ids to get the unanswered questions 
         const unanswered = questionIds.filter(id => answered.indexOf(id) === -1 );
         return (
-            <div>
-                <h3>Unanswered</h3>
+            <div className="tabs">
+                <input type="radio" readOnly name="tabs" id="tabone" checked="checked" />
+                <label htmlFor="tabone">Unanswered</label>
+                <div className="tab">
                 <ul>
                     {unanswered.map(qid => (
                         <li key={qid}>
@@ -25,7 +27,10 @@ class QuestionList extends Component {
                         </li>
                     ))}
                 </ul>
-               <h3>answered</h3>
+                </div>
+                <input type="radio" readOnly name="tabs" id="tabtwo" />
+                <label htmlFor="tabtwo">Answered</label>
+                <div className="tab">
                 <ul>
                     {answered.map(qid => (
                         <li key={qid}>
@@ -33,7 +38,9 @@ class QuestionList extends Component {
                         </li>
                     ))}
                 </ul>
+                </div>
             </div>
+
         );
     }
 }

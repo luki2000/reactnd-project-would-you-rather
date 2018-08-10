@@ -23,11 +23,11 @@ class NewQuestion extends React.Component {
         return (
             <div>
                 <form className="createPoll" onSubmit={this.sendAnswer}>
-                    <fieldset>
-                        <label for="option1">Option One:</label>
-                        <input required type="text" id="option1" name="optionOne" onChange={this.handleInput} value={this.state.optionOne}/>
-                        <label for="option2">Option Two:</label>
-                        <input required type="text" id="option2" name="optionTwo" onChange={this.handleInput} value={this.state.optionTwo}/>
+                    <fieldset className="newquestion">
+                        <label className="newquestion" htmlFor="option1">Option One:</label>
+                        <input className="newquestion" required type="text" id="option1" name="optionOne" onChange={this.handleInput} value={this.state.optionOne}/>
+                        <label className="newquestion" htmlFor="option2">Option Two:</label>
+                        <input className="newquestion" required type="text" id="option2" name="optionTwo" onChange={this.handleInput} value={this.state.optionTwo}/>
                     </fieldset>
                     <button className="action-button" type="submit">Create poll</button>
                 </form>

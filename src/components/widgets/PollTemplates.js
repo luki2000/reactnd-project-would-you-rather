@@ -22,7 +22,7 @@ const PollTemplates = (props) => {
             break;
         }
         case "selectPollAnswer": {
-            const { questions, users, id, handleAnswerSubmit, handleChange, selectedOption, vote1, vote2 } = props;
+            const { questions, users, id, handleAnswerSubmit, handleChange, selectedOption } = props;
             const question = questions[id];
             template =
                 <div className="card-1">
@@ -78,8 +78,7 @@ const PollTemplates = (props) => {
             break;
         }
         case "leaderboard": {
-            const { userscore, classIndex, users }= props;
-            console.log(props);
+            const { userscore, classIndex, users } = props;
             template =
             <div className="card-2">
                 <div style={{display: 'flex'}}>
@@ -97,6 +96,7 @@ const PollTemplates = (props) => {
                     </div>
                 </div>
             </div>;
+            break;
         }
         default:
             template: null;
