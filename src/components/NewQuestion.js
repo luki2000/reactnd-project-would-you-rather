@@ -22,10 +22,14 @@ class NewQuestion extends React.Component {
         console.log(this.props);
         return (
             <div>
-                <form onSubmit={this.sendAnswer}>
-                    <input type="text" name="optionOne" onChange={this.handleInput} value={this.state.optionOne}/>
-                    <input type="text"  name="optionTwo" onChange={this.handleInput} value={this.state.optionTwo}/>
-                    <button type="submit">Create poll</button>
+                <form className="createPoll" onSubmit={this.sendAnswer}>
+                    <fieldset>
+                        <label for="option1">Option One:</label>
+                        <input required type="text" id="option1" name="optionOne" onChange={this.handleInput} value={this.state.optionOne}/>
+                        <label for="option2">Option Two:</label>
+                        <input required type="text" id="option2" name="optionTwo" onChange={this.handleInput} value={this.state.optionTwo}/>
+                    </fieldset>
+                    <button className="action-button" type="submit">Create poll</button>
                 </form>
             </div>
         );

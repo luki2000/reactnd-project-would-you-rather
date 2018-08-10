@@ -33,7 +33,7 @@ class UserLoginForm extends Component {
                         {usernames}
                       </select>
                     </label>
-                    <input type="submit" value="Submit" />
+                    <input className="action-button" type="submit" value="Submit" />
                   </form>
                 );
     }

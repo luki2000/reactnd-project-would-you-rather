@@ -36,8 +36,7 @@ class ChooseQuestionForm extends React.Component {
     }
     
     render() {
-        console.log(this.props);
-        const {id, questions, users, authuser} = this.props;
+        const {id, questions, authuser} = this.props;
         //Here we pass in the id we mapped over and passed as props. 
         //If the an existingid was manually passed in the URL it still works bc we are setting it as property
         //to our questions. If the id is none existing its undefined and we give a default value of false
@@ -60,17 +59,9 @@ class ChooseQuestionForm extends React.Component {
             <div>
                 { answered.length > 0 
                 ? 
-                <div>
-                    <p>avatar is {users[question.author].avatarURL } and author is 
-                        {users[question.author].name}</p>
-                    <p>result is...</p>
-                    <p>number of votes for '{vote1.text}' is {vote1.length}</p>
-                    <p>number of votes for '{vote2.text}' is {vote2.length}</p>
-                    <p>You voted {users[authuser].answers[id]}</p>
-                </div>
-                
+                <PollTemplates  {...this.props} vote1={vote1} vote2={vote2} type="pollResult"/>
                 :
-                    <PollTemplates  {...this.props} selectedOption={this.state.selectedOption} handleAnswerSubmit={this.handleAnswerSubmit} handleChange={this.handleChange} vote1={vote1} vote2={vote2} type="selectPollAnswer"/>}
+                <PollTemplates  {...this.props} selectedOption={this.state.selectedOption} handleAnswerSubmit={this.handleAnswerSubmit} handleChange={this.handleChange} vote1={vote1} vote2={vote2} type="selectPollAnswer"/>}
             </div>
         );
     }

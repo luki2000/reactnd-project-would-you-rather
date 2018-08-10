@@ -1,5 +1,8 @@
 *, *:before, *:after {
     box-sizing: border-box;
+}
+
+body {
     font-family: 'Roboto',sans-serif;
 }
 
@@ -148,9 +151,9 @@ a {
 	background:#e2e0e0; height: 25px; border-radius: 5px; position: relative; margin: 10px; width: 90%; color: white;
 }
 .vote-bar__fill{
-	background:#2196F3; height: 25px; width:50%; border-radius: 5px;}
+	background:#2196F3; height: 25px; width:50%; border-radius: 5px; }
 .vote-bar__percent__number{
-	position: absolute; padding: 5px; top: 0; width:100%;
+	position: absolute; padding: 5px; top: 0; width:100%; display: flex; justify-content: center;
 }
 
 .would-rather-title {
@@ -164,3 +167,66 @@ a {
     margin: 0; 
     margin-bottom: 10px;
 }
+
+.total-score {
+    border-radius:50%;color:white;padding:10px; background: #2196F3; font-size: 26px; width: 57px;
+    display: inline-block;
+}
+.point {
+    border-radius:50%;color:white;padding:10px; background: #2196F3; width: 36px;
+    display: inline-block;
+}
+
+.fa-trophy {
+    font-size: 36px;
+}
+.trophy-0 {
+    color:#FFD700;
+}
+
+.trophy-1 {
+    color:#c0c0c0;
+}
+
+.trophy-2 {
+    color:#cd7f32;
+}
+
+.voted {
+    width: 85px;
+    display: block;
+    margin-left: 78%;
+    transform: rotate(-25deg);
+}
+
+
+fieldset {
+    padding: 0;
+    border: none;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input[type="text"] {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 30px;
+  }
+
+  .createPoll {
+      max-width: 450px;
+  }
+
+  
