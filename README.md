@@ -1,6 +1,34 @@
 # Would You Rather Project
 
-This is the starter code for the final assessment project for Udacity's React & Redux course.
+This project is a polls project. The existing user of the app will have a number of features at his disposal, namely:
+
+#### View polls
+
+The user has the ability to view all existing polls, on the homepage the application will automatically list the polls that he/she has
+answered as well as those that have not been answered.
+
+### Answer a poll
+
+Once you go view a poll, you are taking to the page with the poll. You will be asked to pick what you would rather do/have. However
+If you have already answered it will instead only allow you to view the results of the poll, yu will see which one you had selected 
+and how many in total all users voted for.
+
+### Create a poll
+
+You can create a poll too! Simply go to the new question page and fill in the two fields that will be the option that users will have 
+to choose between to rather do/have.
+
+### Leaderboard
+
+Feeling feisty? The more questions you create and answer the higher you are rated amongst your peers. Head to the leaderboard page to
+see who is on top and beat them if you have to. Get to work!.
+
+## Development Appraoch and self learning
+
+This project has been an interesting journey, both of planning and learning. Before coding I scribbled a lot of diagrams on paper to understand the data flow and components involved. I also reviewed the lesson on real world react-redux app. I wanted to strike a balance between minimizing accesses to the store whilst at the same reduce the number of levels to pass down props. Redux is extremely flexible in that aspect  and once I created the first reducers, actions and connects etc.., the rest of the projects flowed nicely. It is important to note that what really helped me was starting to focus on the login feature, I knew that the rest of the application heavily depended on it and it would have been extremely difficult to implement last as most likely it would require a lot of refactoring to display the right content based on logged in user. I stumbled accross Tyler's article on private routes https://tylermcginnis.com/react-router-protected-routes-authentication/ which basically kicked started my project. I had to adjust it to work with react-redux and my project needs. unfortunately the commit details was lost as I needed to init a new repo. 
+
+
+## Project Sources
 
 The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
 
