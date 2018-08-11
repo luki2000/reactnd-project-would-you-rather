@@ -36,7 +36,7 @@ const PrivateRoute = ({component: Component, authenticator,  ...rest}) => (
 const AuthButton = withRouter(({ history, signOff, authenticator,users,authUser }) => (
     authenticator === true 
 ? <div style={{marginRight:'40px', display: 'flex',minWidth: '260px',justifyContent: 'space-between',
-alignItems: 'center'}} >{users[authUser].name} {<div style={{marginLeft:'10px'}} className="login-img"><img className="avatar" style={{width:'100%'}} src={users[authUser].avatarURL}/></div>} <button style={{marginLeft:'10px'}} className="action-button button-secondary" onClick={()=>{
+alignItems: 'center'}} >{users[authUser].name} {<div style={{marginLeft:'10px'}} className="login-img"><img className="avatar" style={{width:'100%'}} alt={users[authUser].name} src={users[authUser].avatarURL}/></div>} <button style={{marginLeft:'10px'}} className="action-button button-secondary" onClick={()=>{
         signOff(() =>history.push('/'));
     }}>Sign Out</button> </div>
     : <p style={{marginRight:'40px'}} >You are not logged in</p> 
@@ -59,6 +59,7 @@ class App extends Component {
             <Router>
                 <div>
                     <div className="navBar">
+                        {/*Our navigationn bar lives here*/}
                         <ul className="menu">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/newquestion">New Question</Link></li>
@@ -67,6 +68,7 @@ class App extends Component {
                         <AuthButton signOff={this.props.signOffAuthUser} users={this.props.users} authUser={this.props.authUser} authenticator={this.props.isAuthenticated}/>
                     </div>
                     <Switch>
+                        {/*Here is our different routes, notice that those that require are authenticaion are private routes*/}
                         <Route path='/Login' component={Login} />
                         <PrivateRoute authenticator={this.props.isAuthenticated} exact path='/' component={Home}/>
                         <PrivateRoute authenticator={this.props.isAuthenticated} path='/newquestion' SaveTheNewQuestion={this.props.SaveTheNewQuestion} component={NewQuestion} />

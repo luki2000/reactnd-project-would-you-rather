@@ -354,7 +354,6 @@ fieldset.newquestion {
 .login-img {
     width: 40px;
     border-radius: 50%;
-    overflow: hidden;
 }
  /*The following code below is from codepen for css only tabs mikestreety https://codepen.io/mikestreety/pen/yVNNNm */
  
@@ -432,3 +431,18 @@ fieldset.newquestion {
 .tab::-webkit-scrollbar-thumb:hover {
     background: #2196F3; 
 }
+
+
+.avatar-container-lb {
+    border-right:1px solid #2196F3;
+    width:33%; 
+    padding: 5px;
+    }
+    
+    .question-count-container-lb {
+    border-right:1px solid #2196F3; 
+    width:39%; 
+    text-align:left; 
+    padding: 5px;
+    
+    }

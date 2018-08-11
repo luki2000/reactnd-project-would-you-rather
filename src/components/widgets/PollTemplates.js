@@ -15,7 +15,7 @@ const PollTemplates = (props) => {
             template =
                 <div className="card">
                     <p className="author">Asked by {users[question.author].name}</p>
-                    <img className="avatar-img" src={users[question.author].avatarURL} />
+                    <img className="avatar-img" alt={users[question.author].name} src={users[question.author].avatarURL} />
                     <p>...{question.optionOne.text}...</p>
                     <Link to={`/question/${id}`} className="action-button button-primary">VIEW POLL</Link>
                 </div>;
@@ -27,14 +27,14 @@ const PollTemplates = (props) => {
             template =
                 <div className="card-1">
                     <p style={{fontWeight:'bold'}}>Asked {users[question.author].name}</p>
-                    <img className="avatar-img" src={users[question.author].avatarURL}/>
-                    <p style={{fontWeight:'bold', fontSize:20+'px'}}>Would you rather...</p>
+                    <img className="avatar-img" alt={users[question.author].name} src={users[question.author].avatarURL}/>
+                    <p style={{fontWeight:'bold', fontSize:'20px'}}>Would you rather...</p>
                     <form onSubmit={handleAnswerSubmit}>
                         <label className="container">{question.optionOne.text}
                                 <input type="radio" value={Object.keys(question)[3]}  onChange={handleChange}  checked={selectedOption === 'optionOne'} />
                                 <span className="checkmark"></span>
                         </label>
-                        <label class="container">{question.optionTwo.text}
+                        <label className="container">{question.optionTwo.text}
                                 <input type="radio" value={Object.keys(question)[4]}  onChange={handleChange}  checked={selectedOption === 'optionTwo'} />
                                 <span className="checkmark"></span>
                         </label>
@@ -50,9 +50,9 @@ const PollTemplates = (props) => {
             const chosenOption = users[authuser].answers[id];
             template =
                 <div className="card-2" style={{display: 'flex',padding: "3rem 1vw"}}>
-                    <div style={{borderRight:1+'px dotted #2196F3', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+                    <div style={{borderRight:'1px dotted #2196F3', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                         <p style={{fontWeight:'bold',color:'#2196F3'}}>Asked by {users[question.author].name}</p>
-                        <img className="avatar-img" src={users[question.author].avatarURL}/>
+                        <img className="avatar-img" alt={users[question.author].name} src={users[question.author].avatarURL}/>
                     </div>
                     <div style={{width:'100%'}}>
                         <div className="vote-container">
@@ -82,16 +82,16 @@ const PollTemplates = (props) => {
             template =
             <div className="card-3">
                 <div style={{display: 'flex'}}>
-                    <div style={{borderRight:1+'px solid #2196F3',width:33+'%', padding: 5+'px'}}>
+                    <div className="avatar-container-lb">
                         <FontAwesome className={`trophy-${classIndex}`} name="trophy" />
                         <p style={{fontWeight:'bold',color:'#2196F3'}}>{users[userscore.userId].name}</p>
-                        <img className="avatar-img" src={users[userscore.userId].avatarURL}/>
+                        <img className="avatar-img" alt={users[userscore.userId].name} src={users[userscore.userId].avatarURL}/>
                     </div>
-                    <div style={{borderRight:1+'px solid #2196F3', width:39+'%', textAlign:'left', padding: 5+'px'}}>
-                            <table style={{position:'relative', top:55+'px'}}><tr><td>Total questions created</td><td><span className="point">{userscore.questions}</span></td></tr>
-                            <tr><td>Total answers</td><td><span className="point">{userscore.questionsAnswered}</span></td></tr></table>
+                    <div className="question-count-container-lb">
+                        <table style={{position:'relative', top:'55px'}}><tr><td>Total questions created</td><td><span className="point">{userscore.questions}</span></td></tr>
+                        <tr><td>Total answers</td><td><span className="point">{userscore.questionsAnswered}</span></td></tr></table>
                     </div>
-                    <div style={{width:27+'%', padding: 5+'px'}}>
+                    <div style={{width:'27%', padding: '5px'}}>
                             <p>SCORE</p><span className="total-score">{userscore.questionsAnswered + userscore.questions}</span>
                     </div>
                 </div>
@@ -99,9 +99,9 @@ const PollTemplates = (props) => {
             break;
         }
         default:
-            template: null;
+            return template;
         }
-    return template;
+        return template;
 };
 
 export default PollTemplates;

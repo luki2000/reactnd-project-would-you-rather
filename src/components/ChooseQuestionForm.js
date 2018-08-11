@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { checkIfUserAnsweredById } from '../utils/helper';
 import PollTemplates from './widgets/PollTemplates'
 import {Link} from 'react-router-dom'; 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PollTemplates from './widgets/PollTemplates';
 import { checkIfUserAnsweredById } from '../utils/helper';
+//import LoadingBar from 'react-redux-loading-bar';
 
 
 

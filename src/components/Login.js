@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { handleInitialUserData } from '../actions/users';
 import { setAuthUser } from '../actions/authentication';
 import  { Redirect } from 'react-router-dom'; 
-import Icons from '../images/icons'
+import Icons from '../images/icons';
 
 
 class Login extends Component {
@@ -32,9 +32,9 @@ class Login extends Component {
         }
         return (
         <div>
-            <div className="welcome-message">Welcome to the Would You Rather App!<img style={{width:'100px'}} src={Icons.star}/></div>
+            <div className="welcome-message">Welcome to the Would You Rather App!<img style={{width:'100px'}} alt="star" src={Icons.star}/></div>
             <div className="login-interface">
-                {/*<p>You must log in to view this page at {from.pathname}</p>*/}
+                <p>You must log in to view any page {/*this page at {from.pathname}*/}</p>
                 <UserLoginForm users={this.props.users} setAuthUser={this.props.setAuthUser} login={this.login}/>
             </div>
         </div>

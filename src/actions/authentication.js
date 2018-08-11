@@ -4,7 +4,7 @@ export const IS_AUTHENTICATED = 'IS_AUTHENTICATED';
 
 export function isAuthenticated(bool) {
     return {
-        type:IS_AUTHENTICATED,
+        type: IS_AUTHENTICATED,
         bool
     }
 }
@@ -19,9 +19,11 @@ export function setAuthUser(userId) {
     }
 }
 
-export function signOffAuthUser (cb) {
+export function signOffAuthUser(cb) {
     return (dispatch) => {
-        dispatch({type: SIGN_OFF_AUTH_USER});
+        dispatch({
+            type: SIGN_OFF_AUTH_USER
+        });
         dispatch(isAuthenticated(false));
         cb();
     }
