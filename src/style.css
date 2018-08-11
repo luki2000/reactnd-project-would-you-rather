@@ -11,6 +11,7 @@ body {
 
 a {
     color: #2196F3;
+    text-decoration: none;
 }
 
 a:hover {
@@ -25,9 +26,24 @@ ul {
     margin: 0;
     padding: 0;
 }
-
-a {
-    text-decoration: none;
+.welcome-message {
+    position: relative;
+    top: 40px;
+    margin: 0 auto;
+    height:200px;
+    background: white;
+    padding: 30px;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #2196F3;
+    font-size: 25px;
+    width: 550px;
 }
 
 .wrapper {
@@ -80,6 +96,19 @@ a {
     margin: 50px auto;
 }
 
+.card-3 {
+    position: relative;
+    z-index: 10;
+    max-width: 41rem;
+    background-color: #fff;
+    margin: 10px;
+    text-align: center;
+    border-radius: 11px;
+    border-style: groove;
+    border-color: #2196F3;
+    border-width: 12px;
+    margin: 50px auto;
+}
 .avatar-img { 
     border-radius: 50%;
     width: 100px;
@@ -189,7 +218,6 @@ a {
 .vote-container:last-of-type {
     margin-bottom: 0;
 }
-
 .vertical-line {
         width:2px;
         height:100px;
@@ -219,12 +247,21 @@ a {
 }
 
 .total-score {
-    border-radius:50%;color:white;padding:10px; background: #2196F3; font-size: 26px; width: 57px;
+    border-radius:50%;color:white;
+    padding: 13px;
+    background: #2196F3;
+    font-size: 26px;
+    width: 57px;
+    height: 57px;
     display: inline-block;
+    margin-top: 22px;
 }
 .point {
     border-radius:50%;color:white;padding:10px; background: #2196F3; width: 36px;
-    display: inline-block;
+    display: inline-block;width: 36px;
+    height: 36px;
+    text-align: center;
+    padding-top: 9px;
 }
 
 .fa-trophy {
@@ -246,8 +283,8 @@ a {
     width: 88px;
     display: block;
     position: absolute;
-    bottom: 99px;
-    margin-left: 75%;
+    bottom: 70px;
+    margin-left:86%;
     transform: rotate(-25deg);
 }
 
@@ -260,6 +297,7 @@ fieldset.newquestion {
   label.newquestion {
     display: block;
     margin-bottom: 8px;
+    text-align:left;
   }
 
   input[type="text"].newquestion {
@@ -302,7 +340,7 @@ fieldset.newquestion {
     top: 140px;
     margin: 0 auto;
     width: 400px;
-    height:200px;
+    height:150px;
     background: white;
     padding: 30px;
     border-radius: 2px;

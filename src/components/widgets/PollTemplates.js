@@ -80,7 +80,7 @@ const PollTemplates = (props) => {
         case "leaderboard": {
             const { userscore, classIndex, users } = props;
             template =
-            <div className="card-2">
+            <div className="card-3">
                 <div style={{display: 'flex'}}>
                     <div style={{borderRight:1+'px solid #2196F3',width:33+'%', padding: 5+'px'}}>
                         <FontAwesome className={`trophy-${classIndex}`} name="trophy" />
@@ -88,7 +88,7 @@ const PollTemplates = (props) => {
                         <img className="avatar-img" src={users[userscore.userId].avatarURL}/>
                     </div>
                     <div style={{borderRight:1+'px solid #2196F3', width:39+'%', textAlign:'left', padding: 5+'px'}}>
-                            <table style={{position:'relative', top:40+'px'}}><tr><td>Total questions created</td><td><span className="point">{userscore.questions}</span></td></tr>
+                            <table style={{position:'relative', top:55+'px'}}><tr><td>Total questions created</td><td><span className="point">{userscore.questions}</span></td></tr>
                             <tr><td>Total answers</td><td><span className="point">{userscore.questionsAnswered}</span></td></tr></table>
                     </div>
                     <div style={{width:27+'%', padding: 5+'px'}}>
