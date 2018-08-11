@@ -29,7 +29,7 @@ class NewQuestion extends React.Component {
                         <label className="newquestion" htmlFor="option2">Option Two:</label>
                         <input className="newquestion" required type="text" id="option2" name="optionTwo" onChange={this.handleInput} value={this.state.optionTwo}/>
                     </fieldset>
-                    <button className="action-button" type="submit">Create poll</button>
+                    <button className="action-button button-primary" type="submit">Create poll</button>
                 </form>
             </div>
         );

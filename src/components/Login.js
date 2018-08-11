@@ -31,7 +31,7 @@ class Login extends Component {
             return <Redirect to={from} />;
         }
         return (
-        <div>
+        <div className="login-interface">
             <p>You must log in to view this page at {from.pathname}</p>
             <UserLoginForm users={this.props.users} setAuthUser={this.props.setAuthUser} login={this.login}/>
         </div>

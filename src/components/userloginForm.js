@@ -25,7 +25,7 @@ class UserLoginForm extends Component {
       //get user names to generate our form options to choose a user to login with
       const usernames = Object.keys(this.props.users).map(user => <option key={user} value={user}>{user}</option>);
         return (
-                  <form onSubmit={this.handleSubmit}>
+                  <form style={{display: 'flex'}} onSubmit={this.handleSubmit}>
                     <label>
                       Choose User to login with:
                       <select onChange={this.handleChange} required>
@@ -33,7 +33,7 @@ class UserLoginForm extends Component {
                         {usernames}
                       </select>
                     </label>
-                    <input className="action-button" type="submit" value="Submit" />
+                    <input className="action-button button-primary" type="submit" value="Login" />
                   </form>
                 );
     }

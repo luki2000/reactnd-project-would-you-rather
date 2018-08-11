@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Question from './Question';
 import PollTemplates from './widgets/PollTemplates';
 import { checkIfUserAnsweredById } from '../utils/helper';
 
@@ -17,7 +16,7 @@ class QuestionList extends Component {
         const unanswered = questionIds.filter(id => answered.indexOf(id) === -1 );
         return (
             <div className="tabs">
-                <input type="radio" readOnly name="tabs" id="tabone" checked="checked" />
+                <input type="radio" name="tabs" id="tabone" defaultChecked />
                 <label htmlFor="tabone">Unanswered</label>
                 <div className="tab">
                 <ul>
@@ -28,7 +27,7 @@ class QuestionList extends Component {
                     ))}
                 </ul>
                 </div>
-                <input type="radio" readOnly name="tabs" id="tabtwo" />
+                <input type="radio" name="tabs" id="tabtwo" />
                 <label htmlFor="tabtwo">Answered</label>
                 <div className="tab">
                 <ul>

@@ -17,7 +17,7 @@ const PollTemplates = (props) => {
                     <p className="author">Asked by {users[question.author].name}</p>
                     <img className="avatar-img" src={users[question.author].avatarURL} />
                     <p>...{question.optionOne.text}...</p>
-                    <Link to={`/question/${id}`} className="action-button">VIEW POLL</Link>
+                    <Link to={`/question/${id}`} className="action-button button-primary">VIEW POLL</Link>
                 </div>;
             break;
         }
@@ -38,7 +38,7 @@ const PollTemplates = (props) => {
                                 <input type="radio" value={Object.keys(question)[4]}  onChange={handleChange}  checked={selectedOption === 'optionTwo'} />
                                 <span className="checkmark"></span>
                         </label>
-                        <button className="action-button">SUBMIT</button>
+                        <button className="action-button button-primary">SUBMIT</button>
                     </form>
                 </div>;
             break;
@@ -49,18 +49,18 @@ const PollTemplates = (props) => {
             const total = vote2.length + vote1.length;
             const chosenOption = users[authuser].answers[id];
             template =
-                <div style={{display: 'flex'}}>
-                    <div style={{borderRight:1+'px solid #2196F3'}}>
+                <div className="card-2" style={{display: 'flex',padding: "3rem 1vw"}}>
+                    <div style={{borderRight:1+'px dotted #2196F3', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                         <p style={{fontWeight:'bold',color:'#2196F3'}}>Asked by {users[question.author].name}</p>
                         <img className="avatar-img" src={users[question.author].avatarURL}/>
                     </div>
-                    <div>
+                    <div style={{width:'100%'}}>
                         <div className="vote-container">
                             {chosenOption === 'optionOne' ? <img src={Icon.mushroom} className="voted" alt="voted me"/>:null}
                             <p>Would you rather {vote1.text}?</p>
                             <div className="vote-bar__background">
                                 <div className="vote-bar__fill" style={{width: vote1.length/total * 100+'%'}}></div>
-                                <div className="vote-bar__percent__number">{vote1.length/total * 100}%</div>
+                                <div className="vote-bar__percent__number">{Math.floor(vote1.length/total * 100)}%</div>
                             </div>
                             <p style={{textAlign: 'center'}}>{vote1.length} out of {total}</p>
                         </div>
@@ -69,7 +69,7 @@ const PollTemplates = (props) => {
                             <p>Would you rather {vote2.text}?</p>
                             <div className="vote-bar__background">
                                 <div className="vote-bar__fill" style={{width: vote2.length/total * 100+'%'}}></div>
-                                <div className="vote-bar__percent__number">{vote2.length/total * 100}%</div>
+                                <div className="vote-bar__percent__number">{Math.floor(vote2.length/total * 100)}%</div>
                             </div>
                             <p style={{textAlign: 'center'}}>{vote2.length} out of {total}</p>
                         </div>

@@ -35,10 +35,11 @@ const PrivateRoute = ({component: Component, authenticator,  ...rest}) => (
 //rendered by react router, now when signing off we are sent to login
 const AuthButton = withRouter(({ history, signOff, authenticator,users,authUser }) => (
     authenticator === true 
-    ? <p>Welcome {users[authUser].name} <button onClick={()=>{
+? <div style={{marginRight:'40px', display: 'flex',minWidth: '260px',justifyContent: 'space-between',
+alignItems: 'center'}} >{users[authUser].name} {<div style={{marginLeft:'10px'}} className="login-img"><img className="avatar" style={{width:'100%'}} src={users[authUser].avatarURL}/></div>} <button style={{marginLeft:'10px'}} className="action-button button-secondary" onClick={()=>{
         signOff(() =>history.push('/'));
-    }}>Sign Out</button> </p>
-    : <p>You are not logged in</p> 
+    }}>Sign Out</button> </div>
+    : <p style={{marginRight:'40px'}} >You are not logged in</p> 
 ));
 
 
@@ -57,12 +58,14 @@ class App extends Component {
         return (
             <Router>
                 <div>
-                    <AuthButton signOff={this.props.signOffAuthUser} users={this.props.users} authUser={this.props.authUser} authenticator={this.props.isAuthenticated}/>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/newquestion">New Question</Link></li>
-                        <li><Link to="/leaderboard">Leaderboard</Link></li>
-                    </ul>
+                    <div className="navBar">
+                        <ul className="menu">
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/newquestion">New Question</Link></li>
+                            <li><Link to="/leaderboard">Leaderboard</Link></li>
+                        </ul>
+                        <AuthButton signOff={this.props.signOffAuthUser} users={this.props.users} authUser={this.props.authUser} authenticator={this.props.isAuthenticated}/>
+                    </div>
                     <Switch>
                         <Route path='/Login' component={Login} />
                         <PrivateRoute authenticator={this.props.isAuthenticated} exact path='/' component={Home}/>
