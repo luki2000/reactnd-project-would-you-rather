@@ -1,8 +1,8 @@
 # Would You Rather Project
 
-This project is a polls project. The existing user of the app will have a number of features at his disposal, namely:
+This project is a polls project. The existing user of the app will have a number of features at his/her disposal, namely:
 
-#### View polls
+### View polls
 
 The user has the ability to view all existing polls, on the homepage the application will automatically list the polls that he/she has
 answered as well as those that have not been answered.
