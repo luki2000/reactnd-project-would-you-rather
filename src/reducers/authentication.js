@@ -1,7 +1,7 @@
-import { SET_AUTH_USER, SIGN_OFF_AUTH_USER, IS_AUTHENTICATED } from '../actions/authentication';
+import {SET_AUTH_USER, SIGN_OFF_AUTH_USER, IS_AUTHENTICATED} from '../actions/authentication';
 
-export function authUser(state=null, action) {
-    switch(action.type) {
+export function authUser(state = null, action) {
+    switch (action.type) {
         case SET_AUTH_USER:
             console.log(action.userId);
             return action.userId;
@@ -10,12 +10,12 @@ export function authUser(state=null, action) {
         default:
             return state;
     }
-} 
+}
 
-export function isAuthenticated(state=false, action) {
-    switch(action.type) {
+export function isAuthenticated(state = false, action) {
+    switch (action.type) {
         case IS_AUTHENTICATED:
-            return action.bool; 
+            return action.bool;
         default:
             return state;
     }

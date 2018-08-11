@@ -6,7 +6,6 @@ import { handleInitialQuestionData, SaveTheNewQuestion } from './actions/questio
 
 import './style.css'
 
-
 //PAGE COMPONENTS
 import NewQuestion from './components/NewQuestion';
 import Leaderboard from './components/Leaderboard';

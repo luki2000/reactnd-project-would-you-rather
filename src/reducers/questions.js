@@ -1,7 +1,7 @@
-import { GET_QUESTIONS, ANSWER_QUESTION_TO_QUESTIONS, SAVE_QUESTION_TO_QUESTIONS } from '../actions/questions'
+import {GET_QUESTIONS, ANSWER_QUESTION_TO_QUESTIONS, SAVE_QUESTION_TO_QUESTIONS} from '../actions/questions'
 
-export function questions(state= {}, action) {
-    switch(action.type) {
+export function questions(state = {}, action) {
+    switch (action.type) {
         case GET_QUESTIONS:
             return {
                 ...state,
@@ -12,12 +12,12 @@ export function questions(state= {}, action) {
                 ...state,
                 ...action.questions
             }
-        case SAVE_QUESTION_TO_QUESTIONS: 
+        case SAVE_QUESTION_TO_QUESTIONS:
             return {
                 ...state,
-                [action.question.id] : action.question
-                }
+                [action.question.id]: action.question
+            }
         default:
             return state;
     }
-} 
+}

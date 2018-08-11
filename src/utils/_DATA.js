@@ -176,9 +176,6 @@ export function _saveQuestion (question) {
 export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
   return new Promise((res, rej) => {
     setTimeout(() => {
-      console.log('api-users', users);
-      console.log('api-questions', questions);
-      console.log('answer', answer)
       users = {
         ...users,
         //saves the option selected

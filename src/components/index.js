@@ -4,7 +4,7 @@ import QuestionList from './QuestionList';
 const Home = (props) => {
     return (
         <div>
-            <QuestionList />
+            <QuestionList/>
         </div>
     );
 };
